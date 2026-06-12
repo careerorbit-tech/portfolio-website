@@ -11,6 +11,15 @@
     },
     {
       "path": "./lib/api-zod"
+    },
+    {
+      "path": "./artifacts/abhay-portfolio"
+    },
+    {
+      "path": "./artifacts/mockup-sandbox"
+    },
+    {
+      "path": "./artifacts/api-server"
     }
   ]
 }
