@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useRef } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { profileConfig } from '@/profileConfig';
 
 const Counter = ({ from = 0, to, duration = 2 }: { from?: number; to: number; duration?: number }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -34,7 +35,15 @@ export function About() {
               <div className="w-full md:w-1/3 flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border border-white/10 overflow-hidden relative z-10 bg-card/50 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-6xl text-muted-foreground font-display opacity-20">AA</span>
+                    {profileConfig.profileImage ? (
+                      <img 
+                        src={profileConfig.profileImage} 
+                        alt={profileConfig.name} 
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-6xl text-muted-foreground font-display opacity-20">{profileConfig.initials}</span>
+                    )}
                   </div>
                   {/* Decorative rings */}
                   <div className="absolute inset-0 border border-primary/30 rounded-full scale-110 animate-[spin_10s_linear_infinite]"></div>
@@ -43,13 +52,13 @@ export function About() {
               </div>
               
               <div className="w-full md:w-2/3 space-y-6">
-                <h2 className="text-3xl md:text-5xl font-bold font-display text-white">Meet Abhay</h2>
+                <h2 className="text-3xl md:text-5xl font-bold font-display text-white">Meet {profileConfig.name.split(' ')[0]}</h2>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                  Software Engineer & AI Builder based in India. I build systems that think, applications that scale, and tools that matter. When I'm not shipping code, I'm studying the stars and leading astronomy communities.
+                  {profileConfig.shortIntro}
                 </p>
                 
                 <div className="flex flex-wrap gap-3 pt-4">
-                  {['Builder', 'Researcher', 'Astronomer', 'Problem Solver', 'Open Source', 'Leadership'].map((keyword, i) => (
+                  {profileConfig.keywords.map((keyword, i) => (
                     <span key={i} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_rgba(0,212,255,0.4)] transition-all duration-300 cursor-default">
                       {keyword}
                     </span>
@@ -62,7 +71,7 @@ export function About() {
               {[
                 { label: 'Years Experience', value: 3, suffix: '+' },
                 { label: 'Projects Built', value: 10, suffix: '+' },
-                { label: 'DSA Problems', value: 500, suffix: '+' },
+                { label: 'DSA Problems', value: 300, suffix: '+' },
                 { label: 'Research Areas', value: 2, suffix: '+' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">

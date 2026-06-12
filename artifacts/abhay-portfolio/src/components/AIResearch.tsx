@@ -16,7 +16,7 @@ const researchAreas = [
   {
     icon: <Cpu className="w-8 h-8 text-accent" />,
     title: 'Embedded AI',
-    desc: 'Deploying intelligence to edge devices, microcontrollers, and prosthetics. Optimizing models for constrained hardware environments.'
+    desc: 'Deploying intelligence to edge devices and microcontrollers. Optimizing models for constrained hardware environments and real-time inference.'
   },
   {
     icon: <Network className="w-8 h-8 text-primary" />,

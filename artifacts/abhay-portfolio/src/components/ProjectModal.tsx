@@ -41,17 +41,26 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Content */}
         <div className="overflow-y-auto p-6 md:p-8 space-y-12">
-          {/* Hero Image/Video placeholder */}
-          <div className="w-full aspect-video bg-muted rounded-xl border border-white/10 overflow-hidden relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform cursor-pointer">
-                <PlayCircle className="text-white w-10 h-10" />
+          {/* Hero: Video or Static Preview */}
+          {project.hasVideo ? (
+            <div className="w-full aspect-video bg-muted rounded-xl border border-white/10 overflow-hidden relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform cursor-pointer">
+                  <PlayCircle className="text-white w-10 h-10" />
+                </div>
+              </div>
+              <div className="absolute bottom-4 left-4 text-xs font-mono bg-black/70 px-2 py-1 rounded border border-white/10 text-white/70">
+                demo_preview.mp4
               </div>
             </div>
-            <div className="absolute bottom-4 left-4 text-xs font-mono bg-black/70 px-2 py-1 rounded border border-white/10 text-white/70">
-              demo_preview.mp4
+          ) : (
+            <div className="w-full aspect-video bg-muted rounded-xl border border-white/10 overflow-hidden relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 flex flex-col items-center justify-center gap-3">
+                <span className="text-4xl font-bold font-display text-white/20">{project.title}</span>
+                <span className="text-xs font-mono text-white/30 uppercase tracking-widest">Project Preview</span>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-2 space-y-8">

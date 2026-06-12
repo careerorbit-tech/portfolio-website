@@ -55,7 +55,7 @@ export function DSA() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-3xl font-bold text-white">500<span className="text-muted-foreground text-xl">+</span></div>
+                <div className="text-3xl font-bold text-white">300<span className="text-muted-foreground text-xl">+</span></div>
                 <div className="text-xs text-muted-foreground uppercase tracking-wider">Solved</div>
               </div>
             </div>
@@ -70,16 +70,15 @@ export function DSA() {
                   <circle cx="50" cy="50" r="45" fill="none" stroke="#ef4743" strokeWidth="8" strokeDasharray="283" strokeDashoffset="250" strokeLinecap="round" className="opacity-90" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-2xl font-bold text-white">500</span>
+                  <span className="text-2xl font-bold text-white">300</span>
                   <span className="text-[10px] text-muted-foreground uppercase">Total</span>
                 </div>
               </div>
 
-              <div className="space-y-4 flex-1">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-[#00b8a3]">Easy</span>
-                    <span className="text-white font-medium">150</span>
+                    <span className="text-white font-medium">120</span>
                   </div>
                   <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                     <div className="h-full bg-[#00b8a3]" style={{ width: '60%' }}></div>
@@ -88,22 +87,21 @@ export function DSA() {
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-[#ffc01e]">Medium</span>
-                    <span className="text-white font-medium">250</span>
+                    <span className="text-white font-medium">140</span>
                   </div>
                   <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#ffc01e]" style={{ width: '80%' }}></div>
+                    <div className="h-full bg-[#ffc01e]" style={{ width: '70%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-[#ef4743]">Hard</span>
-                    <span className="text-white font-medium">100</span>
+                    <span className="text-white font-medium">40</span>
                   </div>
                   <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#ef4743]" style={{ width: '40%' }}></div>
+                    <div className="h-full bg-[#ef4743]" style={{ width: '20%' }}></div>
                   </div>
                 </div>
-              </div>
             </div>
 
             <div className="flex gap-2">

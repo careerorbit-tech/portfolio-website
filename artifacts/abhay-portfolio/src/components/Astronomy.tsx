@@ -1,23 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Telescope, MapPin, Users, Calendar } from 'lucide-react';
-import { motion } from 'framer-motion';
-
-const events = [
-  { title: "Perseid Meteor Shower Night", date: "Aug 2023", desc: "Coordinated observation and photography sessions for the annual meteor shower.", attendees: "200+ attendees" },
-  { title: "Solar Eclipse Observation", date: "Oct 2023", desc: "Safe public viewing setup with solar filters and educational presentations.", attendees: "300+ attendees" },
-  { title: "Messier Marathon", date: "Mar 2024", desc: "All-night challenge to observe as many Messier objects as possible.", attendees: "80 participants" },
-  { title: "Astrophotography Workshop", date: "Jul 2024", desc: "Hands-on training for capturing deep sky objects with DSLR cameras.", attendees: "50 participants" },
-  { title: "Deep Sky Object Night", date: "Nov 2024", desc: "Dark sky excursion focused on galaxies and nebulae observation.", attendees: "120 attendees" },
-];
-
-const gallery = [
-  { title: 'Orion Nebula (M42)', color: 'from-pink-500/20 to-purple-600/40' },
-  { title: 'Andromeda Galaxy (M31)', color: 'from-blue-500/20 to-cyan-500/40' },
-  { title: 'Jupiter Transit', color: 'from-orange-400/20 to-amber-600/40' },
-  { title: 'Milky Way Core', color: 'from-indigo-600/30 to-purple-800/50' },
-  { title: 'Lunar Eclipse', color: 'from-red-500/20 to-orange-600/40' },
-  { title: 'Saturn Opposition', color: 'from-yellow-400/20 to-yellow-600/40' },
-];
+import { Users } from 'lucide-react';
 
 export function Astronomy() {
   const containerRef = useScrollAnimation();
@@ -53,14 +35,11 @@ export function Astronomy() {
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <ToscopeIcon className="w-12 h-12 text-primary mx-auto mb-6 opacity-80" />
           <h2 className="text-3xl md:text-5xl font-bold font-display text-white mb-6">
-            The Sky is <span className="text-gradient">Not the Limit</span>
+            Astronomy &amp; <span className="text-gradient">Outreach</span>
           </h2>
-          <blockquote className="text-xl md:text-2xl text-muted-foreground italic font-serif leading-relaxed">
-            "Every time I look through a telescope, I'm reminded why I build software — to help humanity understand more, reach further, and wonder deeper."
-          </blockquote>
         </div>
 
-        <div className="glass-panel p-8 md:p-12 rounded-2xl mb-16 border-primary/20 bg-background/60">
+        <div className="glass-panel p-8 md:p-12 rounded-2xl border-primary/20 bg-background/60">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-2/3">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
@@ -79,59 +58,6 @@ export function Astronomy() {
                  <div className="text-3xl font-bold text-white mb-1">500+</div>
                  <div className="text-xs text-muted-foreground uppercase">Students</div>
                </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Events List */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-widest text-sm flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-primary" /> Key Observations
-            </h3>
-            <div className="space-y-4">
-              {events.map((event, i) => (
-                <div key={i} className="p-5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-primary/30 transition-colors group">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-white group-hover:text-primary transition-colors">{event.title}</h4>
-                    <span className="text-xs font-mono text-secondary px-2 py-1 bg-secondary/10 rounded">{event.date}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">{event.desc}</p>
-                  <div className="flex items-center text-xs text-muted-foreground">
-                    <Users size={12} className="mr-1" /> {event.attendees}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Astrophotography Gallery Placeholder */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-widest text-sm flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-primary" /> Cosmic Gallery
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {gallery.map((item, i) => (
-                <motion.div 
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className="aspect-square rounded-xl overflow-hidden relative group cursor-pointer border border-white/10"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity`}></div>
-                  <div className="absolute inset-0 bg-[#050a14] -z-10"></div>
-                  
-                  {/* Fake stars inside the image box */}
-                  <div className="absolute inset-0 opacity-50">
-                    <div className="w-1 h-1 bg-white rounded-full absolute top-[20%] left-[30%] shadow-[0_0_5px_#fff]"></div>
-                    <div className="w-1.5 h-1.5 bg-white rounded-full absolute top-[60%] left-[70%] shadow-[0_0_8px_#fff]"></div>
-                    <div className="w-0.5 h-0.5 bg-white rounded-full absolute top-[40%] left-[50%]"></div>
-                  </div>
-
-                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <h4 className="text-sm font-bold text-white translate-y-2 group-hover:translate-y-0 opacity-80 group-hover:opacity-100 transition-all">{item.title}</h4>
-                  </div>
-                </motion.div>
-              ))}
             </div>
           </div>
         </div>

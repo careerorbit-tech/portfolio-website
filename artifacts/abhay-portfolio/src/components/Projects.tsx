@@ -3,6 +3,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ProjectModal } from './ProjectModal';
 import { Button } from './ui/button';
 import { AnimatePresence } from 'framer-motion';
+import { Github } from 'lucide-react';
 
 export const projects = [
   {
@@ -21,7 +22,8 @@ export const projects = [
       'Creating a unified interface for wildly different algorithm types (graphs vs arrays)'
     ],
     githubUrl: '#',
-    liveUrl: '#'
+    liveUrl: '#',
+    hasVideo: true,
   },
   {
     id: 2,
@@ -39,7 +41,8 @@ export const projects = [
       'Ensuring AI feedback remained constructive and actionable'
     ],
     githubUrl: '#',
-    liveUrl: '#'
+    liveUrl: '#',
+    hasVideo: true,
   },
   {
     id: 3,
@@ -57,26 +60,10 @@ export const projects = [
       'Role-based access control for different club hierarchies'
     ],
     githubUrl: '#',
-    liveUrl: '#'
+    liveUrl: '#',
+    hasVideo: true,
   },
-  {
-    id: 4,
-    title: 'AstroVision',
-    subtitle: 'Computer Vision for Astronomical Objects',
-    tagline: 'Teaching machines to read the stars',
-    stack: ['Python', 'PyTorch', 'OpenCV', 'YOLO', 'FastAPI', 'React'],
-    description: 'Deep learning model for detecting and classifying stars, nebulae, and galaxies in telescope images',
-    impact: '92% classification accuracy, open-sourced research',
-    problem: 'Amateur astrophotographers capture terabytes of data but lack tools to automatically identify and catalog the objects in their wide-field images.',
-    architecture: 'Custom trained YOLOv8 model on a curated dataset of deep sky objects. Model served via FastAPI for low-latency inference, consumed by a React dashboard that overlays bounding boxes on uploaded images.',
-    challenges: [
-      'Curating and annotating a diverse dataset of astronomical images',
-      'Handling extreme variations in image noise and exposure times',
-      'Optimizing the model for inference on consumer hardware'
-    ],
-    githubUrl: '#',
-    liveUrl: '#'
-  },
+
   {
     id: 5,
     title: 'EmoSense AI',
@@ -93,26 +80,9 @@ export const projects = [
       'Smoothing temporal predictions to prevent jittery classifications'
     ],
     githubUrl: '#',
-    liveUrl: '#'
+    liveUrl: '#',
+    hasVideo: true,
   },
-  {
-    id: 6,
-    title: 'AI Prosthetic Arm',
-    subtitle: 'Neural-Controlled Prosthetic Interface',
-    tagline: 'Code that restores movement',
-    stack: ['Python', 'TensorFlow', 'Arduino', 'EMG Sensors', 'Signal Processing'],
-    description: 'Machine learning model that interprets EMG signals from muscle activity to control a 3D-printed prosthetic arm with 5 grip patterns',
-    impact: 'Research project with 95% gesture classification accuracy, submitted for publication',
-    problem: 'Advanced prosthetics are cost-prohibitive, while affordable ones lack intuitive, neural-based control schemes.',
-    architecture: 'Hardware layer (Arduino + EMG sensors) streams raw analog signals to a Python daemon. A signal processing pipeline filters noise before a Random Forest / SVM ensemble predicts intended grip states, sending serial commands back to servo motors.',
-    challenges: [
-      'Filtering 50/60Hz powerline noise from delicate biological signals',
-      'Addressing muscle fatigue drift causing model accuracy decay over time',
-      'Minimizing total loop latency to sub-100ms for natural feeling'
-    ],
-    githubUrl: '#',
-    liveUrl: '#'
-  }
 ];
 
 export function Projects() {
@@ -126,9 +96,15 @@ export function Projects() {
           <h2 className="text-3xl md:text-5xl font-bold font-display text-white">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <div className="hidden md:block text-muted-foreground">
-            Swipe to explore →
-          </div>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group text-sm"
+          >
+            <Github className="w-4 h-4" />
+            <span>Swipe to explore → <span className="text-primary/70 group-hover:text-primary transition-colors underline underline-offset-2">more on GitHub</span></span>
+          </a>
         </div>
         
         {/* Horizontal scroll container */}
@@ -183,6 +159,28 @@ export function Projects() {
               </div>
             </div>
           ))}
+
+          {/* GitHub CTA card — explore more */}
+          <div className="min-w-[85vw] md:min-w-[340px] flex-shrink-0 snap-center">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="glass-panel group rounded-2xl overflow-hidden h-[450px] flex flex-col items-center justify-center gap-6 relative transition-all duration-500 hover:border-primary/50 cursor-pointer block"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative z-10 flex flex-col items-center gap-6 px-8 text-center">
+                <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-primary/40 group-hover:bg-primary/10 transition-all duration-300">
+                  <Github className="w-10 h-10 text-white/60 group-hover:text-primary transition-colors duration-300" />
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-white mb-2 font-display">See All Projects</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">More experiments, tools, and open source work live on GitHub</p>
+                </div>
+                <span className="text-primary text-sm font-medium group-hover:underline underline-offset-2">Visit GitHub Profile →</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 

@@ -3,6 +3,7 @@ import { useTypewriter } from '@/hooks/useTypewriter';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Twitter, Code2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { profileConfig } from '@/profileConfig';
 
 function StarCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -140,10 +141,14 @@ export function Hero() {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse" />
-              <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/50 bg-[#050a14]">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-white font-display">AA</span>
-                </div>
+              <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-primary/50 bg-[#050a14] flex items-center justify-center">
+                {profileConfig.profileImage ? (
+                  <img src={profileConfig.profileImage} alt={profileConfig.name} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-white font-display">{profileConfig.initials}</span>
+                  </div>
+                )}
               </div>
             </div>
 

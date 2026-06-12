@@ -10,7 +10,7 @@ const milestones = [
   { year: '2023', title: 'AlgoVista Born', desc: 'Built algorithm visualization platform', tag: 'Project' },
   { year: '2024', title: 'CareerOrbit.Tech', desc: 'Built AI-powered career platform', tag: 'Project' },
   { year: '2024', title: 'Matrix Astronomy Platform', desc: 'Full astronomy management system', tag: 'Project' },
-  { year: '2024', title: 'Research Mode', desc: 'AI Prosthetic Arm research, EmoSense AI', tag: 'Research' },
+  { year: '2024', title: 'Research Mode', desc: 'EmoSense AI emotion recognition system', tag: 'Research' },
   { year: '2025', title: 'AstroVision + Open Source', desc: 'Computer vision for astronomy, growing GitHub', tag: 'Project' },
   { year: 'Present', title: 'Building the Future', desc: 'Multiple active projects, seeking collaborations', tag: 'Leadership' }
 ];
