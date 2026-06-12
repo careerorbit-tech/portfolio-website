@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "framework": "vite",
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @workspace/abhay-portfolio run build",
+  "framework": null,
+  "installCommand": "corepack enable && pnpm install",
+  "buildCommand": "pnpm --filter @workspace/abhay-portfolio build",
   "outputDirectory": "artifacts/abhay-portfolio/dist/public"
 }
