@@ -3,8 +3,18 @@ import { X, Github, ExternalLink, PlayCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import { projects } from './Projects';
 
+type BaseProject = typeof projects[0];
+
+export interface ExtendedProject extends Omit<BaseProject, 'challenges'> {
+  subtitle?: string;
+  hasVideo?: boolean;
+  problem?: string;
+  architecture?: string;
+  challenges?: string[];
+}
+
 interface ProjectModalProps {
-  project: typeof projects[0];
+  project: ExtendedProject;
   onClose: () => void;
 }
 
@@ -86,7 +96,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   Key Challenges
                 </h4>
                 <ul className="space-y-3">
-                  {project.challenges.map((challenge, i) => (
+                  {project.challenges?.map((challenge, i) => (
                     <li key={i} className="flex gap-3 text-muted-foreground">
                       <span className="text-primary/50 mt-1">▹</span>
                       {challenge}
