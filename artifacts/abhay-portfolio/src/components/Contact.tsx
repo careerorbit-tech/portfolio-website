@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Mail, MapPin, CalendarDays, Github, Linkedin, Twitter, Code2, Send } from 'lucide-react';
+import { Mail, MapPin, CalendarDays, Github, Linkedin, Twitter, Code2, Send, Database } from 'lucide-react';
 
 export function Contact() {
   const containerRef = useScrollAnimation();
@@ -72,13 +72,13 @@ export function Contact() {
 
             <div className="flex gap-4 justify-center lg:justify-start">
               {[
-                { icon: <Github size={24} />, href: "#" },
-                { icon: <Linkedin size={24} />, href: "#" },
-                { icon: <Twitter size={24} />, href: "#" },
-                { icon: <Code2 size={24} />, href: "#" }
+                { icon: <Github size={24} />, href: "https://github.com/AbhayAyare" },
+                { icon: <Linkedin size={24} />, href: "https://www.linkedin.com/in/abhay-ayare" },
+                { icon: <Database size={24} />, href: "https://www.kaggle.com/abhayayare" },
+                { icon: <Code2 size={24} />, href: "https://leetcode.com/u/Abhay6116" }
               ].map((social, i) => (
-                <a 
-                  key={i} 
+                <a
+                  key={i}
                   href={social.href}
                   className="w-14 h-14 rounded-full glass-panel flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300"
                 >
@@ -119,16 +119,16 @@ export function Contact() {
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-muted-foreground">Message</label>
-                <Textarea 
-                  id="message" 
-                  required 
-                  className="bg-black/50 border-white/10 focus-visible:ring-primary min-h-[150px] resize-none" 
+                <Textarea
+                  id="message"
+                  required
+                  className="bg-black/50 border-white/10 focus-visible:ring-primary min-h-[150px] resize-none"
                   placeholder="Tell me about your project or idea..."
                 />
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] gap-2"
               >

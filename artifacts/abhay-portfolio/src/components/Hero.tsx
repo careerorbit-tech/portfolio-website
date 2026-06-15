@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useTypewriter } from '@/hooks/useTypewriter';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Twitter, Code2 } from 'lucide-react';
+import { Github, Linkedin, Twitter, Code2, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { profileConfig } from '@/profileConfig';
 
@@ -172,7 +172,7 @@ export function Hero() {
                   Let's Talk
                 </Button>
               </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer">
+              <a href="https://github.com/AbhayAyare" target="_blank" rel="noreferrer">
                 <Button
                   size="lg"
                   variant="ghost"
@@ -186,10 +186,10 @@ export function Hero() {
 
             <div className="flex space-x-6 pt-2">
               {[
-                { icon: <Github className="h-6 w-6" />, label: 'GitHub', href: 'https://github.com' },
-                { icon: <Linkedin className="h-6 w-6" />, label: 'LinkedIn', href: 'https://linkedin.com' },
-                { icon: <Twitter className="h-6 w-6" />, label: 'Twitter', href: 'https://twitter.com' },
-                { icon: <Code2 className="h-6 w-6" />, label: 'LeetCode', href: 'https://leetcode.com' },
+                { icon: <Github className="h-6 w-6" />, label: 'GitHub', href: 'https://github.com/AbhayAyare' },
+                { icon: <Linkedin className="h-6 w-6" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/abhay-ayare' },
+                { icon: <Database className="h-6 w-6" />, label: 'Database', href: 'https://www.kaggle.com/abhayayare' },
+                { icon: <Code2 className="h-6 w-6" />, label: 'LeetCode', href: 'https://leetcode.com/u/Abhay6116' },
               ].map((s) => (
                 <a
                   key={s.label}
